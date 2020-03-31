@@ -7,7 +7,6 @@ phases:
     commands:
       - echo Entered the install phase...
       - apt-get update -y
-      - export HYSTREET_TOKEN="cTM2gsxRNq2xMzJnRacqwSoh"
 
     finally:
       - echo This always runs even if the update or install command fails
