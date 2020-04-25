@@ -1,0 +1,3 @@
+*.icloud
+__pycache__/
+.idea/
