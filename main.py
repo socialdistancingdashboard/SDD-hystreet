@@ -5,13 +5,15 @@ import json
 from datetime import datetime, timedelta
 import boto3
 
+api_key = os.environ["hystreet_key"]
+
 client = boto3.client('s3')
 
 df = pd.DataFrame(columns=['timestamp', 'station_id', 'pedestrians_count',
                            'unverified', 'weather_condition', 'temperature', 'min_temperature'])
 
 headers = {'Content-Type': 'application/json',
-           'X-API-Token': "dWfpGRD3aBNocEbZNdLrhRDe"}
+           'X-API-Token': api_key}
 res = requests.get('https://hystreet.com/api/locations/', headers=headers)
 locations = res.json()
 
